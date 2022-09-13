@@ -16,6 +16,10 @@ RSpec.describe Crop do
       it "it should inherit from crop" do
         expect(Corn.superclass).to eq(Crop)
       end
+
+      it "should not duplicate the ´Crop´ shared method" do
+        expect(Corn.instance_methods(false)).not_to include(:initialize)
+      end
     end
 
   end
