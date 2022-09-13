@@ -17,10 +17,15 @@ RSpec.describe Crop do
         expect(Corn.superclass).to eq(Crop)
       end
 
-      it "should not duplicate the ´Crop´ shared method" do
+      it "should not duplicate the shared method ´Crop´ " do
         expect(Corn.instance_methods(false)).not_to include(:initialize)
         expect(Corn.instance_methods(false)).not_to include(:ripe?)
       end
+
+      it "should define specific method" do
+        expect(Corn.instance_methods(false)).to include(:water!)
+      end
+
     end
 
   end
