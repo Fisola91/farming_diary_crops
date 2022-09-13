@@ -1,3 +1,4 @@
+require_relative "crop"
 class Rice < Crop
   def water!
     @grains += 5
