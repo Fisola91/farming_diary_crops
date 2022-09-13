@@ -38,6 +38,11 @@ RSpec.describe Crop do
         expect(Rice.instance_methods(false)).not_to include(:ripe?)
       end
 
+      it "should define specific method" do
+        expect(Rice.instance_methods(false)).to include(:water!)
+        expect(Rice.instance_methods(false)).to include(:transplant!)
+      end
+
     end
 
   end
