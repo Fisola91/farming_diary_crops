@@ -1,5 +1,6 @@
 require "crop"
 require "corn"
+require "rice"
 
 RSpec.describe Crop do
   let(:crop) { Crop.new }
@@ -24,6 +25,17 @@ RSpec.describe Crop do
 
       it "should define specific method" do
         expect(Corn.instance_methods(false)).to include(:water!)
+      end
+    end
+
+    context "Rice" do
+      it "it should inherit from crop" do
+        expect(Rice.superclass).to eq(Crop)
+      end
+
+      it "should not duplicate the shared method ´Crop´ " do
+        expect(Rice.instance_methods(false)).not_to include(:initialize)
+        expect(Rice.instance_methods(false)).not_to include(:ripe?)
       end
 
     end

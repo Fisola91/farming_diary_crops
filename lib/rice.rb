@@ -1,9 +1,4 @@
-class Rice
-  attr_reader :grains
-  def initialize
-    @grains = 0
-  end
-
+class Rice < Crop
   def water!
     @grains += 5
   end
@@ -12,7 +7,5 @@ class Rice
     @grains += 10
   end
 
-  def ripe?
-    @grains >= 15
-  end
+
 end
