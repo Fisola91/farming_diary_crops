@@ -19,6 +19,7 @@ RSpec.describe Crop do
 
       it "should not duplicate the ´Crop´ shared method" do
         expect(Corn.instance_methods(false)).not_to include(:initialize)
+        expect(Corn.instance_methods(false)).not_to include(:ripe?)
       end
     end
 
